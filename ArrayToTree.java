@@ -17,8 +17,7 @@ public class ArrayToTree {
 	}
 
 	// Function to insert nodes in level order
-	public Node insertLevelOrder(int[] arr, Node root,
-												int i)
+	public Node insertLevelOrder(int[] arr, Node root,int i)
 	{
 		// Base case for recursion
 		if (i < arr.length) {
@@ -26,12 +25,10 @@ public class ArrayToTree {
 			root = temp;
 
 			// insert left child
-			root.left = insertLevelOrder(arr, root.left,
-											2 * i + 1);
+			root.left = insertLevelOrder(arr, root.left, 2 * i + 1);
 
 			// insert right child
-			root.right = insertLevelOrder(arr, root.right,
-											2 * i + 2);
+			root.right = insertLevelOrder(arr, root.right, 2 * i + 2);
 		}
 		return root;
 	}
